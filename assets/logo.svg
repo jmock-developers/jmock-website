@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="386.00043"
+   height="143.43959"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   version="1.0"
+   sodipodi:docbase="/home/nat/projects/jmock-website/assets"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="black"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.95838926"
+     inkscape:cx="415.85225"
+     inkscape:cy="130.1834"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     width="60px"
+     height="468px"
+     showborder="true"
+     inkscape:window-width="914"
+     inkscape:window-height="622"
+     inkscape:window-x="10"
+     inkscape:window-y="97" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-92.49372,-283.8292)">
+    <text
+       xml:space="preserve"
+       style="font-size:120px;font-style:normal;font-weight:normal;fill:white;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Serif"
+       x="157.55602"
+       y="388.74875"
+       id="text1872"><tspan
+         sodipodi:role="line"
+         id="tspan1874"
+         x="157.55602"
+         y="388.74875"
+         style="font-style:italic;font-weight:bold;font-family:Bitstream Charter;fill:white">j<tspan
+   style="font-style:normal;font-weight:normal;fill:white"
+   id="tspan2042">Mock</tspan></tspan></text>
+    <path
+       style="fill:red;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path2033"
+       d="M 180.66255,311.35022 C 180.28381,311.64346 180.05406,311.08298 179.87959,311.00635 C 183.86382,308.16794 188.31077,306.00777 192.72368,303.87208 C 199.26989,300.75628 205.99493,298.04769 212.74938,295.42306 C 221.78552,291.89019 231.07444,289.10087 240.44793,286.62913 C 247.01807,284.72026 253.65411,283.71428 260.44698,283.83961 C 265.26053,286.93059 262.26922,289.87692 258.79901,293.65081 C 249.54716,302.27891 238.62485,308.8523 227.84449,315.36208 C 209.06627,326.55494 189.71729,336.72491 170.26138,346.67401 C 155.05559,354.45578 139.5963,361.72803 123.84974,368.34582 C 115.08829,372.22138 106.05932,374.97331 96.594846,376.0975 C 89.935936,374.66616 92.700486,369.90846 95.712446,365.69655 C 103.99786,356.10125 114.63075,348.98548 125.20461,342.17541 C 137.04442,334.70811 149.69613,328.76754 162.27124,322.69095 L 162.01022,322.89917 C 151.93493,327.76854 141.89759,332.8109 132.70707,339.24362 C 123.06475,345.7969 113.29867,352.4905 105.64134,361.39558 C 102.89038,365.17798 100.30801,367.93631 105.37645,369.66071 C 114.35524,368.71621 122.91895,366.14801 131.23705,362.51871 C 146.77029,356.07532 161.99141,348.91902 176.97844,341.29098 C 191.37042,333.92999 205.78016,326.55855 219.77384,318.47922 C 230.15348,312.18361 240.68289,305.85103 249.5826,297.51071 C 252.67876,294.18217 255.08289,292.66462 252.01479,289.85217 C 245.4467,289.75053 239.03523,290.77743 232.68414,292.58105 C 223.31435,295.04277 214.05127,297.90084 205.03973,301.47605 C 198.37855,304.09827 191.77089,306.84908 185.25112,309.80758 C 177.35321,313.25906 184.72674,309.85825 186.16484,308.494 C 185.42735,308.92375 184.6192,309.24298 183.95608,309.7811 L 180.66255,311.35022 z " />
+    <path
+       style="font-size:120px;font-style:normal;font-weight:normal;fill:white;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Serif"
+       d="M 183.59602,301.98875 C 178.31602,301.98875 174.35602,305.94875 174.35602,310.98875 C 174.35602,315.42874 177.59602,318.66875 182.51602,318.66875 C 187.67601,318.66875 191.63602,314.70874 191.63602,309.66875 C 191.63602,304.98875 188.63601,301.98875 183.59602,301.98875"
+       id="path2108" />
+  </g>
+</svg>
