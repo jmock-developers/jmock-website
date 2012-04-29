@@ -25,7 +25,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
 	<title>jMock - <xsl:value-of select="/html:html/html:head/html:title"/></title>
-	<link media="screen" rel="stylesheet" type="text/css" href="{$rpath}/jmock.css"/>
+	<link media="screen" rel="stylesheet" type="text/css" href="{$rpath}jmock.css"/>
 	<link media="print" rel="stylesheet" type="text/css" href="{$rpath}print.css"/>
 	<link rel="icon" type="image/png" href="{$rpath}icon.png"/>
 	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
