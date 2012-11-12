@@ -1,8 +1,6 @@
 # Make sure you have installed the catalog files for XHTML on your local filesystem
 
-SITE=jmock@www.jmock.org:public_html
-
-
+GH_PAGES=../jmock-gh-pages
 CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.svn*')
 SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.svn*')
 ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.svn*')
@@ -20,6 +18,7 @@ $(OUTDIR)/%.html: content/%.html templates/skin.xslt data/versions.xml
 	@mkdir -p $(dir $@)
 	xsltproc \
 	  --nodtdattr \
+	  --nonet \
 	  --stringparam path $*.html \
 	  --stringparam rpath `echo $(dir $*) | sed 's|[^/.]\+|..|g'` \
 	  --stringparam baseuri http://www.jmock.org \
@@ -53,16 +52,9 @@ again: clean all
 
 SCANNED_FILES=content templates assets data Makefile
 
-continually: 
-	@while true; do \
-	  if make all; \
-	  then \
-	    condition clear "jMock Website Build"; \
-	  else \
-	    condition alert "jMock Website Build" "jMock Website Build Broken"; \
-	  fi ; \
-	  inotifywait -r -qq -e modify -e delete $(SCANNED_FILES); \
-	done
-
 published: all
-	rsync --recursive --checksum --delete --cvs-exclude --compress --stats --verbose --rsh=ssh $(OUTDIR)/* $(SITE)
+	rm -r $(GH_PAGES)/*
+	cp -r $(OUTDIR)/* $(GH_PAGES)/
+	@echo ">>>>>>>>>>> commit and push $(GH_PAGES) to github <<<<<<<<<<<<<<<<<"
+
+    # rsync --recursive --checksum --delete --cvs-exclude --compress --stats --verbose --rsh=ssh $(OUTDIR)/* $(SITE)
