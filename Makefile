@@ -4,11 +4,13 @@ GH_PAGES=../jmock-gh-pages
 CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.svn*')
 SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.svn*')
 ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.svn*')
+JAVADOCS=$(shell ls javadoc | xargs basename -s "-javadoc.zip")
 
 OUTDIR=skinned
 OUTPUT=$(CONTENT:content/%=$(OUTDIR)/%) \
        $(SKIN:templates/%=$(OUTDIR)/%) \
-       $(ASSETS:assets/%.svg=$(OUTDIR)/%.png)
+       $(ASSETS:assets/%.svg=$(OUTDIR)/%.png) \
+       $(JAVADOCS:javadoc/%=$(OUTDIR)/javadoc/%)
 
 all: $(OUTPUT)
 
@@ -33,6 +35,9 @@ $(OUTDIR)/%: templates/%
 	@mkdir -p $(dir $@)
 	cp $< $@
 
+$(OUTDIR)/javadoc/%: javadoc/%: 
+	echo $@
+    
 $(OUTDIR)/logo.png: WIDTH=176
 $(OUTDIR)/information.png: WIDTH=32
 $(OUTDIR)/warning.png: WIDTH=40
