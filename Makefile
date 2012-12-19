@@ -50,7 +50,8 @@ $(OUTDIR)/%.png: assets/%.svg Makefile
 
 $(OUTDIR)/javadoc/%/index.html: javadoc/%-javadoc.zip
 	@mkdir -p $(@D)
-	unzip  -d $(dir $(@D)) $<
+	@rm -r $(@D)
+	@unzip -q -d $(dir $(@D)) $<
 
 clean:
 	rm -rf $(OUTDIR)/
