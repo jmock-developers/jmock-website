@@ -59,7 +59,7 @@ clean:
 again: clean all
 
 
-SCANNED_FILES=content templates assets data Makefile
+SCANNED_FILES=content templates assets data Makefile javadoc
 
 published: all
 	rm -r $(GH_PAGES)/*
