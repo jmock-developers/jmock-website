@@ -1,16 +1,18 @@
 # Make sure you have installed the catalog files for XHTML on your local filesystem
 
 GH_PAGES=../jmock-gh-pages
-CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.svn*')
-SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.svn*')
-ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.svn*')
-JAVADOCS=$(shell ls javadoc | xargs basename -s "-javadoc.zip")
+CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.git*')
+SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.git*')
+ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.git*')
+JAVADOCS=$(shell find javadoc -name '*.zip')
 
 OUTDIR=skinned
 OUTPUT=$(CONTENT:content/%=$(OUTDIR)/%) \
        $(SKIN:templates/%=$(OUTDIR)/%) \
        $(ASSETS:assets/%.svg=$(OUTDIR)/%.png) \
-       $(JAVADOCS:javadoc/%=$(OUTDIR)/javadoc/%)
+       $(JAVADOCS:javadoc/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html)
+
+foo: $(OUTDIR)/javadoc/jmock-1.2.0/index.html
 
 all: $(OUTPUT)
 
@@ -35,9 +37,6 @@ $(OUTDIR)/%: templates/%
 	@mkdir -p $(dir $@)
 	cp $< $@
 
-$(OUTDIR)/javadoc/%: javadoc/%: 
-	echo $@
-    
 $(OUTDIR)/logo.png: WIDTH=176
 $(OUTDIR)/information.png: WIDTH=32
 $(OUTDIR)/warning.png: WIDTH=40
@@ -48,6 +47,10 @@ $(OUTDIR)/icon.png: WIDTH=24
 $(OUTDIR)/preferences.png: WIDTH=28
 $(OUTDIR)/%.png: assets/%.svg Makefile
 	inkscape --without-gui --export-png=$@ --export-area-drawing --export-area-snap --export-width=$(WIDTH) $<
+
+$(OUTDIR)/javadoc/%/index.html: javadoc/%-javadoc.zip
+	@mkdir -p $(@D)
+	unzip  -d $(dir $(@D)) $<
 
 clean:
 	rm -rf $(OUTDIR)/
