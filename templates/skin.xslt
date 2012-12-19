@@ -95,14 +95,14 @@
 	    <h1>User Support</h1>
 	    <p><a href="{$rpath}mailing-lists.html">Mailing Lists</a></p>
 	    <p><a href="http://www.musketeer-labs.com/">Training</a></p>
-	    <p><a href="http://jira.codehaus.org/secure/BrowseProject.jspa?id=10336">Issue Tracker</a></p>
+	    <p><a href="https://github.com/jmock-developers/jmock-library/issues">Issue Tracker</a></p>
 	    <p><a href="{$rpath}news-rss2.xml">News Feed (RSS 2.0)</a></p>
 	  </div>
 	  
 	  <div class="MenuGroup">
 	    <h1>Credits</h1>
 	    <p><a href="{$rpath}team.html">Development Team</a></p>
-	    <p><a href="http://www.codehaus.org">Project hosted by Codehaus</a></p>
+	    <p><a href="http://www.github.com">Project hosted by Github</a></p>
             <p><a href="http://tango.freedesktop.org">Icons by the Tango Project</a></p>
 	  </div>
 	</div>
