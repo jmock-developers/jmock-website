@@ -55,7 +55,7 @@
     <div class="Raw"><h3>Raw</h3><pre class="Source Java">import org.jmock.Mockery;
 import org.jmock.Expectations;
 
-class PublisherTest extends TestCase {
+public class PublisherTest extends TestCase {
     Mockery context = new Mockery();
     ...    
 }</pre><p>This is a JUnit 3 test case but apart from the test case class the
@@ -65,7 +65,7 @@ class PublisherTest extends TestCase {
     <div class="JUnit3"><h3>JUnit 3</h3><pre class="Source Java">import org.jmock.integration.junit3.MockObjectTestCase;
 import org.jmock.Expectations;
 
-class PublisherTest extends MockObjectTestCase {
+public class PublisherTest extends MockObjectTestCase {
     ...    
 }</pre></div>
 
@@ -74,7 +74,7 @@ import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4RuleMockery;
 
-class PublisherTest {
+public class PublisherTest {
     @Rule public JUnitRuleMockery context = new JUnitRuleMockery();
     ...
 }</pre><p><strong>Note</strong>: this currently only works with the latest
@@ -87,7 +87,7 @@ import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4RuleMockery;
 
 @RunWith(JMock.class)
-class PublisherTest {
+public class PublisherTest {
     Mockery context = new JUnit4Mockery();
     ...    
 }</pre></div>
@@ -172,7 +172,7 @@ final String message = "message";</pre></div>
     <div class="JUnit3"><h3>JUnit 3</h3><pre class="Source Java">import org.jmock.integration.junit3.MockObjectTestCase;
 import org.jmock.Expectations;
 
-class PublisherTest extends MockObjectTestCase {
+public class PublisherTest extends MockObjectTestCase {
     public void testOneSubscriberReceivesAMessage() {
         // set up
         final Subscriber subscriber = mock(Subscriber.class);
@@ -197,7 +197,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.Expectations;
 
 @RunWith(JMock.class)
-class PublisherTest {
+public class PublisherTest {
     Mockery context = new JUnit4Mockery();
     
     @Test 
@@ -223,7 +223,7 @@ class PublisherTest {
     <div class="Raw"><h3>Raw</h3><pre class="Source Java">import org.jmock.Mockery;
 import org.jmock.Expectations;
 
-class PublisherTest extends TestCase {
+public class PublisherTest extends TestCase {
     Mockery context = new Mockery();
 
     public void testOneSubscriberReceivesAMessage() {
