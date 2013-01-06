@@ -4,13 +4,13 @@ GH_PAGES=../jmock-gh-pages
 CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.git*')
 SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.git*')
 ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.git*')
-JAVADOCS=$(shell find javadoc -name '*.zip')
+JAVADOCS=$(shell find archives -name '*javadoc.zip')
 
 OUTDIR=skinned
 OUTPUT=$(CONTENT:content/%=$(OUTDIR)/%) \
        $(SKIN:templates/%=$(OUTDIR)/%) \
        $(ASSETS:assets/%.svg=$(OUTDIR)/%.png) \
-       $(JAVADOCS:javadoc/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html)
+       $(JAVADOCS:archives/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html)
 
 foo: $(OUTDIR)/javadoc/jmock-1.2.0/index.html
 
@@ -48,7 +48,7 @@ $(OUTDIR)/preferences.png: WIDTH=28
 $(OUTDIR)/%.png: assets/%.svg Makefile
 	inkscape --without-gui --export-png=$@ --export-area-drawing --export-area-snap --export-width=$(WIDTH) $<
 
-$(OUTDIR)/javadoc/%/index.html: javadoc/%-javadoc.zip
+$(OUTDIR)/javadoc/%/index.html: archives/%-javadoc.zip
 	@mkdir -p $(@D)
 	@rm -r $(@D)
 	@unzip -q -d $(dir $(@D)) $<
@@ -59,7 +59,7 @@ clean:
 again: clean all
 
 
-SCANNED_FILES=content templates assets data Makefile javadoc
+SCANNED_FILES=content templates assets data Makefile archives
 
 published: all
 	rm -r $(GH_PAGES)/*
