@@ -5,14 +5,17 @@ CONTENT=$(shell find content -not -name '*~' -and -not -path '*/.git*')
 SKIN=$(shell find templates -not -name '*.xslt' -and -not -name '*~' -and -not -path '*/.git*')
 ASSETS=$(shell find assets -not -name '*~' -and -not -path '*/.git*')
 JAVADOCS=$(shell find archives -name '*javadoc.zip')
+ARCHIVES=$(shell find archives -name '*.zip')
 
 OUTDIR=skinned
 OUTPUT=$(CONTENT:content/%=$(OUTDIR)/%) \
        $(SKIN:templates/%=$(OUTDIR)/%) \
        $(ASSETS:assets/%.svg=$(OUTDIR)/%.png) \
-       $(JAVADOCS:archives/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html)
+       $(JAVADOCS:archives/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html) \
+       $(ARCHIVES:archives/%=$(OUTDIR)/downloads/%)
 
-foo: $(OUTDIR)/javadoc/jmock-1.2.0/index.html
+foo:
+	@echo $(OUTPUT)
 
 all: $(OUTPUT)
 
@@ -37,6 +40,10 @@ $(OUTDIR)/%: templates/%
 	@mkdir -p $(dir $@)
 	cp $< $@
 
+$(OUTDIR)/downloads/%: archives/%
+	@mkdir -p $(dir $@)
+	cp $< $@
+
 $(OUTDIR)/logo.png: WIDTH=176
 $(OUTDIR)/information.png: WIDTH=32
 $(OUTDIR)/warning.png: WIDTH=40
@@ -52,6 +59,8 @@ $(OUTDIR)/javadoc/%/index.html: archives/%-javadoc.zip
 	@mkdir -p $(@D)
 	@rm -r $(@D)
 	@unzip -q -d $(dir $(@D)) $<
+
+
 
 clean:
 	rm -rf $(OUTDIR)/
