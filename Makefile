@@ -14,9 +14,6 @@ OUTPUT=$(CONTENT:content/%=$(OUTDIR)/%) \
        $(JAVADOCS:archives/%-javadoc.zip=$(OUTDIR)/javadoc/%/index.html) \
        $(ARCHIVES:archives/%=$(OUTDIR)/downloads/%)
 
-foo:
-	@echo $(OUTPUT)
-
 all: $(OUTPUT)
 
 $(OUTDIR)/index.html: content/news-rss2.xml
