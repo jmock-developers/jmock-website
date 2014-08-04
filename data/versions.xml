@@ -1,4 +1,4 @@
 <versions>
-  <branch id="2" stable="2.6.0">jMock 2 (Java 1.6)</branch>
+  <branch id="2" stable="2.6.1">jMock 2 (Java 1.6)</branch>
   <branch id="1" stable="1.2.0">jMock 1 (Java 1.3+)</branch>
 </versions>
