@@ -78,8 +78,8 @@ class VersionUpgradeError(ValueError):
 
 
 def assert_upgrade(old, new):
-	if old >= new:
-		raise VersionUpgradeError, "new version %s does not follow current version %s"%(new,old)
+	if old > new:
+		raise VersionUpgradeError, "new version %s does not follow or re-publish current version %s"%(new,old)
 
 def update_version_file(versions_file_name, new_version_str):
 	new_version = Version.parse(new_version_str)
